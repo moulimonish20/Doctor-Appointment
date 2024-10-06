@@ -1,0 +1,120 @@
+body {
+    font-family: 'Lato', sans-serif; /* Main body font */
+    padding-top: 60px; /* Add padding to the top to avoid content hiding behind the fixed navbar */
+    scroll-behavior: smooth; /* Enable smooth scrolling */
+    overflow-x: hidden; /* Prevent horizontal scroll */
+    margin: 0; /* Remove default margin */
+}
+
+/* Navbar Styles */
+.navbar {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.8), rgba(200, 200, 200, 0.5)); /* Light gradient for the navbar */
+    border: none; /* Remove the border */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15); /* Shadow for depth */
+    padding: 10px 20px; /* Padding for smaller navbar */
+    border-radius: 20px; /* Rounded edges for dynamic island effect */
+    backdrop-filter: blur(15px); /* Blur effect to simulate dynamic island */
+    position: fixed; /* Keep navbar fixed at the top */
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%); /* Adjust to keep it centered */
+    z-index: 1000; /* Ensure it sits above other content */
+}
+
+.navbar-nav {
+    flex: 1; /* Allow navbar items to take equal space */
+    justify-content: center; /* Center the items */
+}
+
+/* Adjust font size and colors for the navbar links */
+.navbar-nav .nav-link {
+    font-size: 1rem; /* Reduced font size for navigation links */
+    font-weight: 600; /* Slightly lighter weight */
+    color: #333333; /* Darker text color for better visibility */
+    transition: color 0.3s ease; /* Smooth color transition on hover */
+    padding: 0.5rem 1rem; /* Reduced padding for nav links */
+    font-family: 'Lato', sans-serif; /* Set font to Lato for navbar links */
+}
+
+.navbar-nav .nav-link:hover {
+    color: #007bff; /* Light blue on hover */
+}
+
+/* Button for appointment */
+.btn-appointment {
+    position: relative; /* For absolute positioning of the pseudo-element */
+    background-color: #ffffff; /* White background for the button */
+    color: #343a40; /* Dark color for text */
+    font-weight: 600;
+    padding: 10px 20px; /* Reduced padding for smaller button */
+    font-size: 1rem; /* Reduced font size */
+    border: none; /* Remove default border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Change cursor to pointer */
+    overflow: hidden; /* Hide overflow for the pseudo-element */
+    transition: background-color 0.3s ease, transform 0.1s ease, box-shadow 0.3s ease; /* Smooth transitions */
+}
+
+.btn-appointment:hover {
+    background-color: #e2e6ea; /* Slightly darker on hover */
+    color: #343a40; /* Keep text color on hover */
+}
+
+.btn-appointment:active {
+    background-color: transparent; /* Remove background color on click */
+    transform: translateY(2px); /* Push down effect */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Black shadow effect on click */
+}
+
+/* Full-screen image section with slight transparency */
+.hero {
+    position: relative;
+    height: 100vh; /* Full viewport height */
+    margin-top: -60px; /* Move image up to remove gap with navbar */
+}
+
+/* Transparent background image using the ::before pseudo-element */
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('/land-img/langing\ page.jpg') no-repeat center center / cover;
+    opacity: 0.8; /* Adjust opacity to make the image slightly transparent */
+    z-index: -1; /* Place the background behind the text */
+}
+
+/* Text overlay on the image */
+.hero-text {
+    position: absolute;
+    right: calc(50px + 30px + 50px + 30px); /* Move text 30px left */
+    top: calc(50% + 90px); /* Move text 40px down from the previous position */
+    transform: translateY(-50%); /* Adjust for center alignment */
+    text-align: left; /* Align text left */
+    color: rgb(255, 255, 255); /* Text color */
+    max-width: 400px; /* Limit width for better readability */
+}
+
+/* Apply the Satisfy font to the landing page text */
+.hero-text h1, .hero-text p {
+    font-family: 'Satisfy', cursive; /* Apply Satisfy font to all headings and paragraphs inside .hero-text */
+}
+
+/* Font size adjustments for hero text */
+.htag {
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+    font-size: 2.5rem; /* Font size for heading */
+    white-space: nowrap; /* Prevent line breaks in heading */
+}
+
+.video-audio {
+    font-weight: 500; /* Medium weight */
+    font-size: 1.5rem; /* Slightly larger font size for subtext */
+}
+
+.consult-doctors {
+    font-weight: 500; /* Regular weight */
+    font-size: 1.2rem; /* Slightly smaller font size for description */
+}
